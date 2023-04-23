@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  console.log("1: Code Starts");
+
+  console.log("2: Loop starting");
+  for (let i = 0; i < 5; i++) {
+    console.log("i: ", i);
+  }
+  console.log("2. Loop Ended");
+
+  const myPromise = new Promise((reply, reject) => {
+    reply("3: Promise completed");
+  });
+
+  setTimeout(() => {
+    console.log("4: First setTimeOut");
+  }, 0);
+
+  setTimeout(() => {
+    console.log("5: Second setTimeOut");
+  }, 1000);
+
+  setTimeout(() => {
+    console.log("6: First setTimeOut");
+  }, 0);
+
+  console.log(" 7: Promise calling");
+  myPromise
+    .then((data) => {
+      console.log("8: Process Success: :Data", data);
+    })
+    .catch((err) => {
+      console.log("8.1: Error:", err);
+    });
+
+  console.log("9: Promise Completed");
+</script>
