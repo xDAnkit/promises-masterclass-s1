@@ -5,7 +5,7 @@ const p = () =>
     setTimeout(() => {
       console.log("Inside STO");
       reply("Success");
-    }, 5000);
+    }, 60000);
   });
 
 const promise = () =>
@@ -17,7 +17,7 @@ const promise = () =>
     controller.signal.addEventListener("abort", () => {
       console.log("rejected");
       //clearInterval(id);
-      reject();
+      resolve({ orderConfirmed: false });
     });
   });
 
